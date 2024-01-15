@@ -35,7 +35,8 @@ public class KartAgent : Agent
       _kartController.ApplyAcceleration(Actions[1]);
       _kartController.Steer(Actions[0]);
       _kartController.AnimateKart(Actions[0]);
-   }
+      _kartController.ApplyBreaking(Actions[2]);
+    }
    
    public override void Heuristic(in ActionBuffers actionsOut)
    {
@@ -44,5 +45,6 @@ public class KartAgent : Agent
       
       continousActions[0] = Input.GetAxis("Horizontal");
       continousActions[1] = Input.GetKey(KeyCode.W) ? 1f : 0f;
-   }
+      continousActions[2] = Input.GetKey(KeyCode.S) ? 1f : 0f;
+    }
 }

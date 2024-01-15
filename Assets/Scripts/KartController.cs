@@ -42,7 +42,14 @@ public class KartController : MonoBehaviour
       rotate = 0f;
    }
 
-   public void AnimateKart(float input)
+    public void ApplyBreaking(float input)
+    {
+        currentSpeed = Mathf.SmoothStep(currentSpeed, 0, Time.deltaTime * 12f);
+        currentRotate = Mathf.Lerp(currentRotate, rotate, Time.deltaTime * 4f);
+        rotate = 0f;
+    }
+
+    public void AnimateKart(float input)
    {
       kartModel.localEulerAngles = Vector3.Lerp(kartModel.localEulerAngles, new Vector3(0, 90 + (input * 15), kartModel.localEulerAngles.z), .2f);
       
@@ -58,6 +65,7 @@ public class KartController : MonoBehaviour
       Vector3 pos = _spawnPointManager.SelectRandomSpawnpoint();
       sphere.MovePosition(pos);
       transform.position = pos - new Vector3(0, 0.4f, 0);
+        speed = 0;
    }
    
    public void FixedUpdate()
