@@ -1,0 +1,29 @@
+{
+    "KartAgent": {
+        "checkpoints": [
+            {
+                "steps": 21768,
+                "file_path": "results\\MyTrack5\\KartAgent\\KartAgent-21768.onnx",
+                "reward": -1.4520000219345093,
+                "creation_time": 1705295222.952298,
+                "auxillary_file_paths": [
+                    "results\\MyTrack5\\KartAgent\\KartAgent-21768.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 21768,
+            "file_path": "results\\MyTrack5\\KartAgent.onnx",
+            "reward": -1.4520000219345093,
+            "creation_time": 1705295222.952298,
+            "auxillary_file_paths": [
+                "results\\MyTrack5\\KartAgent\\KartAgent-21768.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.8.0+cpu"
+    }
+}

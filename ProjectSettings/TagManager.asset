@@ -7,6 +7,7 @@ TagManager:
   - Goal
   - Wall
   - Checkpoint
+  - Gras
   layers:
   - Default
   - TransparentFX

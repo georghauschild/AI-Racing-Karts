@@ -35,19 +35,16 @@ public class KartController : MonoBehaviour
 
    public void ApplyAcceleration(float input)
    {
+        if (input < 0)
+        {
+            input = -0.1f;
+        }
       speed = acceleration * input;
       currentSpeed = Mathf.SmoothStep(currentSpeed, speed, Time.deltaTime * 12f);
       speed = 0f;
       currentRotate = Mathf.Lerp(currentRotate, rotate, Time.deltaTime * 4f);
       rotate = 0f;
    }
-
-    public void ApplyBreaking(float input)
-    {
-        currentSpeed = Mathf.SmoothStep(currentSpeed, 0, Time.deltaTime * 12f);
-        currentRotate = Mathf.Lerp(currentRotate, rotate, Time.deltaTime * 4f);
-        rotate = 0f;
-    }
 
     public void AnimateKart(float input)
    {
@@ -87,6 +84,11 @@ public class KartController : MonoBehaviour
       //Normal Rotation
       kartNormal.up = Vector3.Lerp(kartNormal.up, hitNear.normal, Time.deltaTime * 8.0f);
       kartNormal.Rotate(0, transform.eulerAngles.y, 0);
+
+      //Wall Collision
+      
+
+
    }
    
    public void Steer(float steeringSignal)
@@ -96,5 +98,7 @@ public class KartController : MonoBehaviour
       
       rotate = (steering * steerDirection) * steeringStrength;
    }
+
+
 
 }

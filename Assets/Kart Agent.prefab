@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2522272461841878788}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49,13 +49,71 @@ MonoBehaviour:
   - Goal
   - Wall
   - Checkpoint
-  m_RaysPerDirection: 1
-  m_MaxRayDegrees: 3.2
+  m_RaysPerDirection: 2
+  m_MaxRayDegrees: 4
   m_SphereCastRadius: 0.5
   m_RayLength: 100
   m_RayLayerMask:
     serializedVersion: 2
     m_Bits: 3891
+  m_ObservationStacks: 1
+  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  m_StartVerticalOffset: 0
+  m_EndVerticalOffset: 0
+--- !u!1 &3062945564952182696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 187466927468588086}
+  - component: {fileID: 4140844390784800798}
+  m_Layer: 2
+  m_Name: RaysDown
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &187466927468588086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3062945564952182696}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3137537921882263165}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &4140844390784800798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3062945564952182696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: RayPerceptionSensorDown
+  m_DetectableTags: []
+  m_RaysPerDirection: 0
+  m_MaxRayDegrees: 46.6
+  m_SphereCastRadius: 0
+  m_RayLength: 2
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967291
   m_ObservationStacks: 1
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
@@ -209,6 +267,7 @@ GameObject:
   - component: {fileID: 3137537921078816490}
   - component: {fileID: 3137537921078816491}
   - component: {fileID: 615356445828344825}
+  - component: {fileID: 1016575329895037645}
   m_Layer: 2
   m_Name: Collider
   m_TagString: Untagged
@@ -295,6 +354,19 @@ MonoBehaviour:
   TimeLeft: 45
   kartAgent: {fileID: 3137537921882263140}
   nextCheckPointToReach: {fileID: 0}
+--- !u!114 &1016575329895037645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3137537921078816488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83cef61926d91de4fabc137e97061049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kartAgent: {fileID: 3137537921882263140}
 --- !u!1 &3137537921143488006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,6 +1235,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2522272461841878789}
+  - {fileID: 187466927468588086}
   - {fileID: 3137537922403377517}
   m_Father: {fileID: 3137537921386370560}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1198,8 +1271,8 @@ MonoBehaviour:
   kartModel: {fileID: 3137537921393488654}
   kartNormal: {fileID: 3137537922403377517}
   sphere: {fileID: 3137537921078816491}
-  acceleration: 65
-  steering: 15
+  acceleration: 40
+  steering: 20
   gravity: 25
   layerMask:
     serializedVersion: 2
@@ -1223,13 +1296,13 @@ MonoBehaviour:
     VectorObservationSize: 3
     NumStackedVectorObservations: 1
     m_ActionSpec:
-      m_NumContinuousActions: 3
+      m_NumContinuousActions: 2
       BranchSizes: 
-    VectorActionSize: 03000000
+    VectorActionSize: 02000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: 693a940cf53cf214b859a34a3c82926f, type: 3}
+  m_Model: {fileID: 5022602860645237092, guid: a913e240341959b41b63c188ed00a529, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: KartAgent
@@ -1254,8 +1327,8 @@ MonoBehaviour:
   - Goal
   - Wall
   - Checkpoint
-  m_RaysPerDirection: 2
-  m_MaxRayDegrees: 120
+  m_RaysPerDirection: 5
+  m_MaxRayDegrees: 100
   m_SphereCastRadius: 0
   m_RayLength: 20
   m_RayLayerMask:
@@ -1264,7 +1337,7 @@ MonoBehaviour:
   m_ObservationStacks: 1
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
-  m_StartVerticalOffset: 0
+  m_StartVerticalOffset: 0.2
   m_EndVerticalOffset: 0
 --- !u!114 &7311101263571885456
 MonoBehaviour:

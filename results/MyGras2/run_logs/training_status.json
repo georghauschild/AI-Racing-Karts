@@ -1,0 +1,65 @@
+{
+    "KartAgent": {
+        "checkpoints": [
+            {
+                "steps": 1499964,
+                "file_path": "results\\MyGras2\\KartAgent\\KartAgent-1499964.onnx",
+                "reward": -2.471418356895447,
+                "creation_time": 1705304645.548059,
+                "auxillary_file_paths": [
+                    "results\\MyGras2\\KartAgent\\KartAgent-1499964.pt"
+                ]
+            },
+            {
+                "steps": 1999539,
+                "file_path": "results\\MyGras2\\KartAgent\\KartAgent-1999539.onnx",
+                "reward": -1.9636061588923137,
+                "creation_time": 1705304940.856979,
+                "auxillary_file_paths": [
+                    "results\\MyGras2\\KartAgent\\KartAgent-1999539.pt"
+                ]
+            },
+            {
+                "steps": 2499871,
+                "file_path": "results\\MyGras2\\KartAgent\\KartAgent-2499871.onnx",
+                "reward": -2.527991858395663,
+                "creation_time": 1705305223.9910357,
+                "auxillary_file_paths": [
+                    "results\\MyGras2\\KartAgent\\KartAgent-2499871.pt"
+                ]
+            },
+            {
+                "steps": 2999364,
+                "file_path": "results\\MyGras2\\KartAgent\\KartAgent-2999364.onnx",
+                "reward": -3.1891366243362427,
+                "creation_time": 1705305508.6380892,
+                "auxillary_file_paths": [
+                    "results\\MyGras2\\KartAgent\\KartAgent-2999364.pt"
+                ]
+            },
+            {
+                "steps": 3352453,
+                "file_path": "results\\MyGras2\\KartAgent\\KartAgent-3352453.onnx",
+                "reward": -1.907697041829427,
+                "creation_time": 1705305718.2506306,
+                "auxillary_file_paths": [
+                    "results\\MyGras2\\KartAgent\\KartAgent-3352453.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 3352453,
+            "file_path": "results\\MyGras2\\KartAgent.onnx",
+            "reward": -1.907697041829427,
+            "creation_time": 1705305718.2506306,
+            "auxillary_file_paths": [
+                "results\\MyGras2\\KartAgent\\KartAgent-3352453.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.8.0+cpu"
+    }
+}
