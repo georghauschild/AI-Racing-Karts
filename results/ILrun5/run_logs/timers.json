@@ -1,0 +1,42 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1705419887",
+        "python_version": "3.9.12 (main, Apr  4 2022, 05:22:27) [MSC v.1916 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\georg\\anaconda3\\envs\\mlagents\\Scripts\\mlagents-learn D:\\georg\\Documents\\AI-Racing-Karts\\KartAgent.yaml --run-id=ILrun5",
+        "mlagents_version": "0.30.0",
+        "mlagents_envs_version": "0.30.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.8.0+cpu",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1705419891"
+    },
+    "total": 4.722236499999999,
+    "count": 1,
+    "self": 0.004562599999998973,
+    "children": {
+        "run_training.setup": {
+            "total": 0.074631,
+            "count": 1,
+            "self": 0.074631
+        },
+        "TrainerController.start_learning": {
+            "total": 4.6430429,
+            "count": 1,
+            "self": 0.00016890000000113758,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 4.642860799999999,
+                    "count": 1,
+                    "self": 4.642860799999999
+                },
+                "TrainerController._save_models": {
+                    "total": 1.3199999999713441e-05,
+                    "count": 1,
+                    "self": 1.3199999999713441e-05
+                }
+            }
+        }
+    }
+}

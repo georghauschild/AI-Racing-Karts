@@ -22,12 +22,12 @@ public class Collisions : MonoBehaviour
             if (raycastHit.collider.gameObject.CompareTag("Gras"))
             {
               //  Debug.Log("Raycast hat Gras berührt");
-                kartAgent.AddReward(-0.1f);
+                kartAgent.AddReward(-0.001f);
             }
             if (raycastHit.collider.gameObject.CompareTag("Road"))
             {
               //  Debug.Log("Raycast hat Road berührt");
-              //  kartAgent.AddReward(0.1f);
+                kartAgent.AddReward(0.001f);
             }
 
         }
@@ -38,6 +38,12 @@ public class Collisions : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             Debug.Log("Kollision mit einer Wand: Reward -0.3");
+            kartAgent.AddReward(-0.3f);
+        }
+
+        if (collision.gameObject.CompareTag("Gras"))
+        {
+            Debug.Log("Kollision mit Gras: Reward -0.3");
             kartAgent.AddReward(-0.3f);
         }
     }
