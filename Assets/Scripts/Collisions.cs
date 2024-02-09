@@ -16,17 +16,15 @@ public class Collisions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Raycast unter dem Objekt
+        // Raycast under the cart
         if (Physics.Raycast(transform.position, transform.forward, out raycastHit))
         {
             if (raycastHit.collider.gameObject.CompareTag("Gras"))
             {
-              //  Debug.Log("Raycast hat Gras berührt");
                 kartAgent.AddReward(-0.001f);
             }
             if (raycastHit.collider.gameObject.CompareTag("Road"))
             {
-              //  Debug.Log("Raycast hat Road berührt");
                 kartAgent.AddReward(0.001f);
             }
 
